@@ -17,6 +17,19 @@ public class Arrays {
         return  kleinsterWert;
     }
 
+    public static int größterWertImArray(int[] array) {
+        int größterWert = array[0];
+        for (int i=1; i < array.length; i++) {
+            if (array[i] > größterWert)
+                größterWert = array[i];
+        }
+        return  größterWert;
+    }
+
+    public static boolean istDasArrayAufsteigendSortiert(int[] array) {
+        return false;
+    }
+
 
     public static void main(String[] args) {
 //        // Anlegen eines Arrays
@@ -36,5 +49,6 @@ public class Arrays {
         System.out.println( "Ist die 13 im Array? " + sucheImArray(datenreihe, 13) );
         System.out.println( "Ist die 42 im Array? " + sucheImArray(datenreihe, 42) );
         System.out.println( kleinsterWertImArray(datenreihe) );
+        System.out.println( größterWertImArray(datenreihe) );
     }
 }
