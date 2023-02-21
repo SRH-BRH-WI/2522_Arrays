@@ -38,13 +38,36 @@ public class Arrays {
      Für i = 1 bis n
         Merke  m  als  i.Wert im array
         Setze j = i
-        Solange j > 0 und der Wert an ( j-1). Stelle im array ist größer als m
+        Solange j > 0 und der Wert an (j-1). Stelle im array größer ist als m
             Kopiere den Wert von (j-1). Stelle an die j. Stelle im array
             Erniedrige j um 1
-        Kopieren den Wert m an die j. Stelle im array
+        Kopiere den Wert m an die j. Stelle im array
+
+        Hinweis: n ist array.length
      */
     public static void machWasMitDemArray(int[] array) {
-        // Hinweis: n ist array.length
+        for (int i=0; i < array.length; i++) {
+            int m = array[i];
+            int j = i;
+            while (j > 0 && array[j-1] > m) {
+                array[j] = array[j-1];
+                j--;
+            }
+            array[j] = m;
+        }
+    }
+
+    private static void arrayAusgeben(int[] array) {
+        System.out.print("[");
+        for (int i=0; i<array.length; i++) {
+            if (i>0) System.out.print(", ");
+            System.out.print(array[i]);
+        }
+        System.out.println("]");
+    }
+
+    private static int[] erstelleKopieDesArrays(int[] array) {
+        return array; //<- so nicht !
     }
 
 
@@ -70,5 +93,9 @@ public class Arrays {
         System.out.println( größterWertImArray(datenreihe) );
         System.out.println( "Array sortiert? " + istDasArrayAufsteigendSortiert(datenreihe) );
         System.out.println( "Zweite Array sortiert? " + istDasArrayAufsteigendSortiert(sortierteDatenreihe) );
+        machWasMitDemArray(datenreihe);
+        System.out.println( "Array jetzt sortiert? " + istDasArrayAufsteigendSortiert(datenreihe) );
+        arrayAusgeben( datenreihe );
     }
+
 }
