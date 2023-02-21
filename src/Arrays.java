@@ -33,6 +33,16 @@ public class Arrays {
         return true;
     }
 
+    /*
+     Sei array ein Feld von n Zahlen
+     Für i = 1 bis n
+        Merke  m  als  i.Wert im array
+        Setze j = i
+        Solange j > 0 und der Wert an ( j-1). Stelle im array ist größer als m
+            Kopiere den Wert von (j-1). Stelle an die j. Stelle im array
+            Erniedrige j um 1
+        Kopieren den Wert m an die j. Stelle im array
+     */
     public static void machWasMitDemArray(int[] array) {
         // Hinweis: n ist array.length
     }
