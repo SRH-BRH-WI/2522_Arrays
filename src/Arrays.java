@@ -74,7 +74,12 @@ public class Arrays {
     }
 
     private static boolean sindDieArraysGleich(int[] a, int[] b) {
-        return false;
+        if (a.length != b.length)
+            return false;
+        for (int i=0; i<a.length; i++) {
+            if (a[i] != b[i]) return false;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
@@ -103,10 +108,9 @@ public class Arrays {
         System.out.println( "Array jetzt sortiert? " + istDasArrayAufsteigendSortiert(datenreihe) );
         arrayAusgeben( datenreihe );
         int[] nochEinArray = erstelleKopieDesArrays(datenreihe);
-        //nochEinArray[ nochEinArray.length / 2 ] = 55;
+        nochEinArray[ nochEinArray.length / 2 ] = 55;
         arrayAusgeben( nochEinArray );
         System.out.println( sindDieArraysGleich(datenreihe, nochEinArray) );
     }
-
 
 }
