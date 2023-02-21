@@ -83,7 +83,18 @@ public class Arrays {
     }
 
     private static int[] entferneZahlAusArray(int[] array, int zahl) {
-        return array; // <- so nicht !
+        int längeDesNeuenArrays = array.length;
+        if (sucheImArray(array, zahl)) längeDesNeuenArrays--;
+        int[] neuesArray = new int[ längeDesNeuenArrays ];
+
+        int index = 0;
+        for (int i=0; i < array.length; i++) {
+            if (array[i] != zahl) {
+                neuesArray[index] = array[i];
+                index++;
+            }
+        }
+        return neuesArray;
     }
 
     public static void main(String[] args) {
@@ -116,5 +127,6 @@ public class Arrays {
         arrayAusgeben( nochEinArray );
         System.out.println( sindDieArraysGleich(datenreihe, nochEinArray) );
         int[] einWeiteresArray = entferneZahlAusArray(nochEinArray, 55);
+        arrayAusgeben( einWeiteresArray );
     }
 }
