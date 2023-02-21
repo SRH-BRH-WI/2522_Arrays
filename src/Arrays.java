@@ -9,7 +9,12 @@ public class Arrays {
     }
 
     public static int kleinsterWertImArray(int[] array) {
-        // TODO
+        int kleinsterWert = array[0];
+        for (int i=1; i < array.length; i++) {
+            if (array[i] < kleinsterWert)
+                kleinsterWert = array[i];
+        }
+        return  kleinsterWert;
     }
 
 
@@ -30,5 +35,6 @@ public class Arrays {
 
         System.out.println( "Ist die 13 im Array? " + sucheImArray(datenreihe, 13) );
         System.out.println( "Ist die 42 im Array? " + sucheImArray(datenreihe, 42) );
+        System.out.println( kleinsterWertImArray(datenreihe) );
     }
 }
