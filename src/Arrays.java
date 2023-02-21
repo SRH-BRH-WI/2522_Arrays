@@ -27,7 +27,14 @@ public class Arrays {
     }
 
     public static boolean istDasArrayAufsteigendSortiert(int[] array) {
-        return false;
+        for (int i=0; i < array.length-1; i++) {
+            if (array[i] > array[i+1]) return false;
+        }
+        return true;
+    }
+
+    public static void machWasMitDemArray(int[] array) {
+        // Hinweis: n ist array.length
     }
 
 
@@ -45,10 +52,13 @@ public class Arrays {
 //        System.out.println( einWeiteresArray[3] );
 
         int[] datenreihe = { 17, 3, 29, 22, 5, 11, 9, 13, 7, 12 };
+        int[] sortierteDatenreihe = { 3, 5, 7, 9, 11, 12, 13, 17, 22, 29 };
 
         System.out.println( "Ist die 13 im Array? " + sucheImArray(datenreihe, 13) );
         System.out.println( "Ist die 42 im Array? " + sucheImArray(datenreihe, 42) );
         System.out.println( kleinsterWertImArray(datenreihe) );
         System.out.println( größterWertImArray(datenreihe) );
+        System.out.println( "Array sortiert? " + istDasArrayAufsteigendSortiert(datenreihe) );
+        System.out.println( "Zweite Array sortiert? " + istDasArrayAufsteigendSortiert(sortierteDatenreihe) );
     }
 }
