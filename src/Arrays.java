@@ -67,9 +67,15 @@ public class Arrays {
     }
 
     private static int[] erstelleKopieDesArrays(int[] array) {
-        return array; //<- so nicht !
+        int[] neuesArray = new int[ array.length ];
+        for (int i=0; i<array.length; i++)
+            neuesArray[i] = array[i];
+        return neuesArray;
     }
 
+    private static boolean sindDieArraysGleich(int[] a, int[] b) {
+        return false;
+    }
 
     public static void main(String[] args) {
 //        // Anlegen eines Arrays
@@ -96,6 +102,11 @@ public class Arrays {
         machWasMitDemArray(datenreihe);
         System.out.println( "Array jetzt sortiert? " + istDasArrayAufsteigendSortiert(datenreihe) );
         arrayAusgeben( datenreihe );
+        int[] nochEinArray = erstelleKopieDesArrays(datenreihe);
+        //nochEinArray[ nochEinArray.length / 2 ] = 55;
+        arrayAusgeben( nochEinArray );
+        System.out.println( sindDieArraysGleich(datenreihe, nochEinArray) );
     }
+
 
 }
