@@ -82,6 +82,10 @@ public class Arrays {
         return true;
     }
 
+    private static int[] entferneZahlAusArray(int[] array, int zahl) {
+        return array; // <- so nicht !
+    }
+
     public static void main(String[] args) {
 //        // Anlegen eines Arrays
 //        int[] array = { 5, 4, 3, 2, 1 };
@@ -111,6 +115,6 @@ public class Arrays {
         nochEinArray[ nochEinArray.length / 2 ] = 55;
         arrayAusgeben( nochEinArray );
         System.out.println( sindDieArraysGleich(datenreihe, nochEinArray) );
+        int[] einWeiteresArray = entferneZahlAusArray(nochEinArray, 55);
     }
-
 }
