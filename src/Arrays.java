@@ -84,7 +84,7 @@ public class Arrays {
 
     private static int[] entferneZahlAusArray(int[] array, int zahl) {
         int längeDesNeuenArrays = array.length;
-        if (sucheImArray(array, zahl)) längeDesNeuenArrays--;
+        if ( sucheImArray(array, zahl) ) längeDesNeuenArrays--;
         int[] neuesArray = new int[ längeDesNeuenArrays ];
 
         int index = 0;
@@ -96,6 +96,14 @@ public class Arrays {
         }
         return neuesArray;
     }
+
+    // Neue Aufgabe für daheim:
+    // Schnittmenge: { 1, 5, 9, 23 } /\ { 3, 5, 17, 23 }
+    // => { 5, 23 }
+    public static int[] schnittmengeZweierArrays(int[] a, int[] b) {
+        return null; // das ist ein falscher Wert, muss korrigiert werden
+    }
+
 
     public static void main(String[] args) {
 //        // Anlegen eines Arrays
